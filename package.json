@@ -1,5 +1,5 @@
 {
-  "name": "name",
+  "name": "manticora",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -20,10 +20,12 @@
     "eslint-plugin-react-hooks": "^2.5.0",
     "react": "16.13.1",
     "react-native": "0.63.3",
+    "react-native-camera": "^3.40.0",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-reanimated": "^1.13.1",
     "react-native-safe-area-context": "^3.1.8",
-    "react-native-screens": "^2.11.0"
+    "react-native-screens": "^2.11.0",
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -32,6 +34,7 @@
     "@types/jest": "^25.2.3",
     "@types/react-native": "^0.63.2",
     "@types/react-test-renderer": "^16.9.2",
+    "@types/styled-components": "^5.1.3",
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
     "babel-jest": "^25.1.0",
