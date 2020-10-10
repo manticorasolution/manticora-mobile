@@ -25,9 +25,9 @@
   },
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "rules": {
-    "prettier/prettier": "warn",
-    "react-hooks/rules-of-hooks": "warn",
-    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
@@ -35,7 +35,7 @@
     "no-use-before-define": "off",
     "react/jsx-props-no-spreading": "off",
     "no-param-reassign": [
-      "warn",
+      "error",
       {
         "props": false
       }
