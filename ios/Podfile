@@ -31,3 +31,7 @@ target 'name-tvOS' do
     # Pods for testing
   end
 end
+
+pod 'react-native-camera', path: '../node_modules/react-native-camera', subspecs: [
+  'BarcodeDetectorMLKit'
+]
