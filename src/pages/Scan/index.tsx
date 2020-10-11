@@ -8,11 +8,13 @@ import {
   RNCameraSC,
   BarcodeMaskSC,
   ProductContainer,
+  PageHeaderContainer,
 } from './styles';
 
 import Product, { IProduct } from '../../components/Product';
 
 import api from '../../services/api';
+import PageHeader from '../../components/PageHeader';
 
 interface IProductResponse {
   data: {
@@ -62,26 +64,31 @@ const Register: React.FC = () => {
   }
 
   return (
-    <Container>
-      <CameraContainer>
-        <RNCameraSC
-          type={RNCamera.Constants.Type.back}
-          flashMode={RNCamera.Constants.FlashMode.on}
-          onBarCodeRead={({ data: barcode }) => handleBarCode(barcode)}
-        >
-          {!pegou && <BarcodeMaskSC height={150} maskOpacity={0.5} />}
-        </RNCameraSC>
-      </CameraContainer>
-      <ProductContainer>
-        {product && pegou && (
-          <Product
-            product={product}
-            handleCancel={handlePegou}
-            handleRegister={handleRegister}
-          />
-        )}
-      </ProductContainer>
-    </Container>
+    <>
+      <PageHeaderContainer>
+        <PageHeader navBack />
+      </PageHeaderContainer>
+      <Container>
+        <CameraContainer>
+          <RNCameraSC
+            type={RNCamera.Constants.Type.back}
+            flashMode={RNCamera.Constants.FlashMode.on}
+            onBarCodeRead={({ data: barcode }) => handleBarCode(barcode)}
+          >
+            {!pegou && <BarcodeMaskSC height={150} maskOpacity={0.5} />}
+          </RNCameraSC>
+        </CameraContainer>
+        <ProductContainer>
+          {product && pegou && (
+            <Product
+              product={product}
+              handleCancel={handlePegou}
+              handleRegister={handleRegister}
+            />
+          )}
+        </ProductContainer>
+      </Container>
+    </>
   );
 };
 
