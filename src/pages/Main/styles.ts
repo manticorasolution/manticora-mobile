@@ -5,6 +5,13 @@ export const Container = styled.SafeAreaView`
   flex: 1;
   justify-content: center;
   padding: 40px;
+  background-color: #fff;
+  margin-top: 30px;
+`;
+
+export const PageHeaderContainer = styled.View`
+  width: 100%;
+  height: 50px;
 `;
 
 export const Banner = styled.Image`
@@ -26,17 +33,8 @@ export const ButtonsContainer = styled.View`
   justify-content: space-between;
 `;
 
-export const ButtonPrimary = styled(RectButton)`
-  background-color: #9871f5;
-  height: 150px;
-  width: 48%;
-  border-radius: 8px;
-  padding: 24px;
-  justify-content: space-between;
-`;
-
-export const ButtonSecondary = styled(RectButton)`
-  background-color: #04d361;
+export const Button = styled(RectButton)`
+  background-color: #5e70ff;
   height: 150px;
   width: 48%;
   border-radius: 8px;
@@ -48,13 +46,4 @@ export const ButtonText = styled.Text`
   font-family: Archivo-Bold;
   color: #fff;
   font-size: 18px;
-`;
-
-export const TotalConnections = styled.Text`
-  font-family: Poppins-Regular;
-  color: #d4c2ff;
-  font-size: 12px;
-  line-height: 20px;
-  max-width: 140px;
-  margin-top: 40px;
 `;
