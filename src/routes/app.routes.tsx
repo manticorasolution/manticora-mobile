@@ -18,8 +18,20 @@ const AppRoutes: React.FC = () => (
         name="Main"
         component={Main}
       />
-      <App.Screen name="Scan" component={Scan} />
-      <App.Screen name="Register" component={Register} />
+      <App.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Scan"
+        component={Scan}
+      />
+      <App.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Register"
+        component={Register}
+      />
     </App.Navigator>
   </NavigationContainer>
 );
