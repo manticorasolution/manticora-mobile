@@ -26,12 +26,16 @@ export const Avatar = styled.Image`
 
 export const ProfileInfo = styled.View`
   margin: 0px 16px;
+  flex-wrap: wrap;
+  flex: 1;
 `;
 
 export const Name = styled.Text`
   font-family: Archivo-Bold;
   color: #32264d;
   font-size: 17px;
+  flex-wrap: wrap;
+  width: 100%;
 `;
 
 export const QuantityInfo = styled.Text`
@@ -97,7 +101,7 @@ export const CancelButton = styled(RectButton)`
 `;
 
 export const ContactButton = styled(RectButton)`
-  background-color: #8257e5;
+  background-color: #5e70ff;
   flex: 1;
   flex-direction: row;
   height: 56px;
