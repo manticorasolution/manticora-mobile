@@ -26,9 +26,3 @@ export const RNCameraSC = styled(RNCamera)`
 `;
 
 export const BarcodeMaskSC = styled(BarcodeMask)``;
-
-export const ProductContainer = styled.View`
-  flex: 1;
-  background-color: #eeeeee;
-  margin-top: 40px;
-`;
