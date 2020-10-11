@@ -31,11 +31,10 @@ import {
 export interface IProduct {
   id: number;
   name: string;
-  bio: string;
-  avatar: string;
-  cost: number | string;
-  subject: number;
-  whatsapp: string;
+  producer: string;
+  description: string;
+  average_cost: number | string;
+  picture: string;
 }
 
 interface IProductItemProps {
@@ -53,7 +52,7 @@ const Register: React.FC<IProductItemProps> = ({
   return (
     <Container>
       <Profile>
-        <Picture source={{ uri: product.avatar }} />
+        <Picture source={{ uri: product.picture }} />
 
         <ProfileInfo>
           <Name>{product.name}</Name>
@@ -63,37 +62,40 @@ const Register: React.FC<IProductItemProps> = ({
       <Body>
         <InputContainer>
           <Label>Fabricante</Label>
-          <InputDisabled>Heinz</InputDisabled>
+          <InputDisabled>{product.producer}</InputDisabled>
         </InputContainer>
 
         <DescriptionContainer>
           <Label>Descrição</Label>
-          <DescriptionText>Molho de Tomate HEINZ - Ketchup</DescriptionText>
+          <DescriptionText>{product.description}</DescriptionText>
         </DescriptionContainer>
 
         <InputContainer>
           <Label>Preço Médio</Label>
-          <InputDisabled>R$ 15,00</InputDisabled>
+          <InputDisabled>
+            R$
+            {product.average_cost}
+          </InputDisabled>
         </InputContainer>
 
         <InputContainer>
           <Label>Preço de Custo</Label>
-          <Input keyboardType="numeric">R$ 13,95</Input>
+          <Input keyboardType="numeric" />
         </InputContainer>
 
         <InputContainer>
           <Label>Preço de Venda</Label>
-          <Input keyboardType="numeric">R$ 16,50</Input>
+          <Input keyboardType="numeric" />
         </InputContainer>
 
         <InputContainer>
           <Label>Validade</Label>
-          <Input> 01/05/2021 </Input>
+          <Input />
         </InputContainer>
 
         <InputContainer>
           <Label>Quantidade</Label>
-          <Input keyboardType="numeric">12</Input>
+          <Input keyboardType="numeric" />
         </InputContainer>
       </Body>
 

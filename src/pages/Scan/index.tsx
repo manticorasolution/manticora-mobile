@@ -21,45 +21,41 @@ interface IProductResponse {
     gtin: number;
     thumbnail: string;
     avg_price: number;
-    gtins: Array<{
-      gtin: number;
-      commercial_unit: {
-        quantity_packaging: number;
-      };
-    }>;
+    brand: {
+      name: string;
+    };
+    ncm: {
+      description: string;
+    };
   };
 }
 
 const Register: React.FC = () => {
   const [product, setProduct] = useState(null as IProduct | null);
-  const [pegou, setPegou] = useState(false);
+  const [disableCamera, setDisableCamere] = useState(false);
 
   async function handleBarCode(barcode: string): Promise<void> {
-    if (pegou) return;
-    setPegou(true);
+    if (disableCamera) return;
+    setDisableCamere(true);
     const { data } = (await api.get(`/gtins/${barcode}`)) as IProductResponse;
-    const quantityIndex = data.gtins.findIndex(
-      gtin => String(gtin.gtin) === barcode,
-    );
     const productData: IProduct = {
       id: data.gtin,
-      avatar: data.thumbnail,
-      bio: String(data.gtin),
-      cost: data.avg_price.toFixed(2),
+      picture: data.thumbnail,
+      average_cost: data.avg_price.toFixed(2),
       name: data.description,
-      subject: data.gtins[quantityIndex].commercial_unit.quantity_packaging,
-      whatsapp: String(data.gtin),
+      description: data.ncm.description,
+      producer: data.brand.name,
     };
 
     setProduct(productData);
   }
 
-  function handlePegou(): void {
-    setPegou(false);
+  function handleDisableCamere(): void {
+    setDisableCamere(false);
   }
 
   function handleRegister(): void {
-    setPegou(false);
+    setDisableCamere(false);
   }
 
   return (
@@ -68,7 +64,7 @@ const Register: React.FC = () => {
         <PageHeader navBack />
       </PageHeaderContainer>
       <Container>
-        {!(product && pegou) ? (
+        {!(product && disableCamera) ? (
           <CameraContainer>
             <RNCameraSC
               type={RNCamera.Constants.Type.back}
@@ -81,7 +77,7 @@ const Register: React.FC = () => {
         ) : (
           <Product
             product={product}
-            handleCancel={handlePegou}
+            handleCancel={handleDisableCamere}
             handleRegister={handleRegister}
           />
         )}
