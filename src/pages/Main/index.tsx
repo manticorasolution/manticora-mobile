@@ -2,6 +2,7 @@ import React from 'react';
 import { Image } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
+import FeatherIcon from 'react-native-vector-icons/Feather';
 import {
   Banner,
   ButtonPrimary,
@@ -37,13 +38,13 @@ const Landing: React.FC = () => {
 
       <ButtonsContainer>
         <ButtonPrimary onPress={navigateToRegister}>
-          <Image source={studyIcon} />
+          <FeatherIcon size={35} name="aperture" color="#fff" />
 
           <ButtonText>Scan</ButtonText>
         </ButtonPrimary>
 
         <ButtonSecondary onPress={navigateToScan}>
-          <Image source={giveClassesIcon} />
+          <FeatherIcon size={35} name="edit" color="#fff" />
 
           <ButtonText>Manualmente</ButtonText>
         </ButtonSecondary>

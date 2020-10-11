@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Image } from 'react-native';
+import FeatherIcon from 'react-native-vector-icons/Feather';
 
 import {
   Avatar,
@@ -78,11 +79,11 @@ const Register: React.FC<IProductItemProps> = ({
 
         <ButtonsContainer>
           <CancelButton onPress={handleCancel}>
-            <Image source={heartOutlineIcon} />
+            <FeatherIcon size={20} name="x-circle" color="#fff" />
           </CancelButton>
 
           <ContactButton onPress={handleRegister}>
-            <Image source={heartOutlineIcon} />
+            <FeatherIcon size={20} name="clipboard" color="#fff" />
             <ContactTextButton>Cadastrar</ContactTextButton>
           </ContactButton>
         </ButtonsContainer>
