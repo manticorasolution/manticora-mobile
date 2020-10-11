@@ -37,13 +37,13 @@ const Landing: React.FC = () => {
       <Title>Como você deseja cadastrar seu produto?</Title>
 
       <ButtonsContainer>
-        <ButtonPrimary onPress={navigateToRegister}>
+        <ButtonPrimary onPress={navigateToScan}>
           <FeatherIcon size={35} name="aperture" color="#fff" />
 
           <ButtonText>Scan</ButtonText>
         </ButtonPrimary>
 
-        <ButtonSecondary onPress={navigateToScan}>
+        <ButtonSecondary onPress={navigateToRegister}>
           <FeatherIcon size={35} name="edit" color="#fff" />
 
           <ButtonText>Manualmente</ButtonText>
