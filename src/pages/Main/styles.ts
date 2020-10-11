@@ -1,31 +1,60 @@
+import { RectButton } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  align-items: center;
+  justify-content: center;
+  padding: 40px;
 `;
 
-export const ButtonContainer = styled.View`
-  border-radius: 5px;
-  margin: 60px 20px;
-  flex: 1;
+export const Banner = styled.Image`
+  width: 100%;
+  resize-mode: contain;
+`;
+
+export const Title = styled.Text`
+  font-family: Poppins_400Regular;
+  color: #000;
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 80px;
+`;
+
+export const ButtonsContainer = styled.View`
   flex-direction: row;
-  justify-content: center;
-  background-color: #fff;
-  align-items: center;
+  margin-top: 40px;
+  justify-content: space-between;
 `;
 
-export const LinkButton = styled.TouchableOpacity`
-  width: 40%;
-  height: 200px;
-  background-color: #000fff;
-  border-radius: 20px;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
+export const ButtonPrimary = styled(RectButton)`
+  background-color: #9871f5;
+  height: 150px;
+  width: 48%;
+  border-radius: 8px;
+  padding: 24px;
+  justify-content: space-between;
 `;
 
-export const LinkButtonText = styled.Text`
-  font-size: 30px;
-  color: #ffffff;
+export const ButtonSecondary = styled(RectButton)`
+  background-color: #04d361;
+  height: 150px;
+  width: 48%;
+  border-radius: 8px;
+  padding: 24px;
+  justify-content: space-between;
+`;
+
+export const ButtonText = styled.Text`
+  font-family: Archivo_700Bold;
+  color: #fff;
+  font-size: 18px;
+`;
+
+export const TotalConnections = styled.Text`
+  font-family: Poppins_400Regular;
+  color: #d4c2ff;
+  font-size: 12px;
+  line-height: 20px;
+  max-width: 140px;
+  margin-top: 40px;
 `;
