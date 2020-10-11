@@ -41,7 +41,7 @@ const Landing: React.FC = () => {
           <Button onPress={navigateToScan}>
             <FeatherIcon size={35} name="aperture" color="#fff" />
 
-            <ButtonText>Scan</ButtonText>
+            <ButtonText>Câmera</ButtonText>
           </Button>
 
           <Button onPress={navigateToRegister}>
