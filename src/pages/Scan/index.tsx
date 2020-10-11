@@ -7,7 +7,6 @@ import {
   Container,
   RNCameraSC,
   BarcodeMaskSC,
-  ProductContainer,
   PageHeaderContainer,
 } from './styles';
 
@@ -69,24 +68,23 @@ const Register: React.FC = () => {
         <PageHeader navBack />
       </PageHeaderContainer>
       <Container>
-        <CameraContainer>
-          <RNCameraSC
-            type={RNCamera.Constants.Type.back}
-            flashMode={RNCamera.Constants.FlashMode.on}
-            onBarCodeRead={({ data: barcode }) => handleBarCode(barcode)}
-          >
-            {!pegou && <BarcodeMaskSC height={150} maskOpacity={0.5} />}
-          </RNCameraSC>
-        </CameraContainer>
-        <ProductContainer>
-          {product && pegou && (
-            <Product
-              product={product}
-              handleCancel={handlePegou}
-              handleRegister={handleRegister}
-            />
-          )}
-        </ProductContainer>
+        {!(product && pegou) ? (
+          <CameraContainer>
+            <RNCameraSC
+              type={RNCamera.Constants.Type.back}
+              flashMode={RNCamera.Constants.FlashMode.on}
+              onBarCodeRead={({ data: barcode }) => handleBarCode(barcode)}
+            >
+              <BarcodeMaskSC height={150} maskOpacity={0.5} />
+            </RNCameraSC>
+          </CameraContainer>
+        ) : (
+          <Product
+            product={product}
+            handleCancel={handlePegou}
+            handleRegister={handleRegister}
+          />
+        )}
       </Container>
     </>
   );
