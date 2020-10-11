@@ -7,17 +7,16 @@ export const Container = styled.View`
   border-width: 1px;
   border-color: #e6e6f0;
   border-radius: 8px;
-  margin-bottom: 16px;
   overflow: hidden;
 `;
 
 export const Profile = styled.View`
   flex-direction: row;
   align-items: center;
-  padding: 24px;
+  padding: 12px 26px;
 `;
 
-export const Avatar = styled.Image`
+export const Picture = styled.Image`
   width: 64px;
   height: 64px;
   border-radius: 32px;
@@ -38,18 +37,48 @@ export const Name = styled.Text`
   width: 100%;
 `;
 
-export const QuantityInfo = styled.Text`
-  font-family: Poppins-Regular;
-  color: #8b8989;
-  font-size: 15px;
-  margin-top: 4px;
+export const Body = styled.View`
+  background-color: #fff;
+  padding: 0px 18px;
+  align-items: center;
+  margin: 0px 5px 18px 18px;
 `;
 
-export const Quantity = styled.Text`
-  font-family: Poppins-Regular;
-  color: #2f4f4f;
-  font-size: 18px;
-  margin-top: 4px;
+export const InputContainer = styled.View`
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  border-bottom-width: 0.5px;
+`;
+
+export const DescriptionContainer = styled.View`
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  border-bottom-width: 0.5px;
+  padding: 10px 0px;
+`;
+
+export const DescriptionText = styled.Text`
+  font-size: 14px;
+  font-family: Archivo-Bold;
+`;
+
+export const Label = styled.Text`
+  font-size: 14px;
+  font-family: Archivo-Regular;
+`;
+
+export const Input = styled.TextInput`
+  font-size: 14px;
+  font-family: Archivo-Bold;
+`;
+
+export const InputDisabled = styled.TextInput`
+  font-size: 13px;
+  font-family: Archivo-Bold;
+  color: #bebebe;
 `;
 
 export const Footer = styled.View`
@@ -62,32 +91,39 @@ export const InfoContainer = styled.View`
   width: 100%
   flex-direction: row;
   align-items: center;
-  margin-bottom: 5px;
   justify-content: space-between;
 `;
 
-export const Info = styled.Text`
+export const SwitchContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const InfoSwitch = styled.Text`
+  font-family: Poppins-SemiBold;
+  color: #000;
+  font-size: 11px;
+`;
+
+export const SwitchInput = styled.Switch``;
+
+export const InfoCode = styled.Text`
   font-family: Poppins-Regular;
   color: #8b8989;
-  font-size: 14px;
+  font-size: 11px;
 `;
 
 export const Code = styled.Text`
   font-family: Poppins-Regular;
   color: #778899;
-  font-size: 14px;
+  font-size: 11px;
   text-decoration: underline;
-`;
-
-export const Price = styled.Text`
-  font-family: Poppins-Regular;
-  color: #32cd32;
-  font-size: 16px;
 `;
 
 export const ButtonsContainer = styled(RectButton)`
   flex-direction: row;
-  margin-top: 16px;
+  margin-top: 7px;
 `;
 
 export const CancelButton = styled(RectButton)`

@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Image } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
 import {
-  Avatar,
+  Body,
   ButtonsContainer,
   CancelButton,
   Code,
@@ -14,15 +13,20 @@ import {
   Footer,
   InfoContainer,
   Name,
-  Info,
-  Price,
+  InfoCode,
+  InfoSwitch,
+  Picture,
   Profile,
   ProfileInfo,
-  Quantity,
-  QuantityInfo,
+  Label,
+  Input,
+  InputContainer,
+  SwitchInput,
+  InputDisabled,
+  SwitchContainer,
+  DescriptionContainer,
+  DescriptionText,
 } from './styles';
-
-import heartOutlineIcon from '../../assets/images/icons/heart-outline.png';
 
 export interface IProduct {
   id: number;
@@ -45,45 +49,83 @@ const Register: React.FC<IProductItemProps> = ({
   handleCancel,
   handleRegister,
 }) => {
+  const [isEnabled, setIsEnabled] = useState(false);
   return (
     <Container>
       <Profile>
-        <Avatar source={{ uri: product.avatar }} />
+        <Picture source={{ uri: product.avatar }} />
 
         <ProfileInfo>
           <Name>{product.name}</Name>
-          <QuantityInfo>
-            Qnt.
-            {'  '}
-            <Quantity>{product.subject}</Quantity>
-          </QuantityInfo>
         </ProfileInfo>
       </Profile>
 
+      <Body>
+        <InputContainer>
+          <Label>Fabricante</Label>
+          <InputDisabled>Heinz</InputDisabled>
+        </InputContainer>
+
+        <DescriptionContainer>
+          <Label>Descrição</Label>
+          <DescriptionText>Molho de Tomate HEINZ - Ketchup</DescriptionText>
+        </DescriptionContainer>
+
+        <InputContainer>
+          <Label>Preço Médio</Label>
+          <InputDisabled>R$ 15,00</InputDisabled>
+        </InputContainer>
+
+        <InputContainer>
+          <Label>Preço de Custo</Label>
+          <Input keyboardType="numeric">R$ 13,95</Input>
+        </InputContainer>
+
+        <InputContainer>
+          <Label>Preço de Venda</Label>
+          <Input keyboardType="numeric">R$ 16,50</Input>
+        </InputContainer>
+
+        <InputContainer>
+          <Label>Validade</Label>
+          <Input> 01/05/2021 </Input>
+        </InputContainer>
+
+        <InputContainer>
+          <Label>Quantidade</Label>
+          <Input keyboardType="numeric">12</Input>
+        </InputContainer>
+      </Body>
+
       <Footer>
         <InfoContainer>
-          <Info>
-            Uni.
-            {'  '}
-            <Price>
-              R$
-              {product.cost}
-            </Price>
-          </Info>
-          <Info>
+          <SwitchContainer>
+            <SwitchInput
+              value={isEnabled}
+              onValueChange={() => setIsEnabled(!isEnabled)}
+              trackColor={{ false: '#767577', true: '#5e70ff' }}
+              thumbColor={isEnabled ? '#fff' : '#f4f3f4'}
+            />
+            <InfoSwitch>
+              Vender na Loja
+              {'\n'}
+              Virtual
+            </InfoSwitch>
+          </SwitchContainer>
+          <InfoCode>
             Cod.
             {'  '}
             <Code>{product.id}</Code>
-          </Info>
+          </InfoCode>
         </InfoContainer>
 
         <ButtonsContainer>
           <CancelButton onPress={handleCancel}>
-            <FeatherIcon size={20} name="x-circle" color="#fff" />
+            <FeatherIcon size={33} name="x-circle" color="#fff" />
           </CancelButton>
 
           <ContactButton onPress={handleRegister}>
-            <FeatherIcon size={20} name="clipboard" color="#fff" />
+            <FeatherIcon size={25} name="clipboard" color="#fff" />
             <ContactTextButton>Cadastrar</ContactTextButton>
           </ContactButton>
         </ButtonsContainer>
