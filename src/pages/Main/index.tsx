@@ -5,19 +5,16 @@ import { useNavigation } from '@react-navigation/native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import {
   Banner,
-  ButtonPrimary,
+  Button,
   ButtonsContainer,
-  ButtonSecondary,
   ButtonText,
   Container,
+  PageHeaderContainer,
   Title,
-  TotalConnections,
 } from './styles';
 
 import landingImg from '../../assets/images/landing.png';
-import studyIcon from '../../assets/images/icons/study.png';
-import giveClassesIcon from '../../assets/images/icons/give-classes.png';
-import heartIcon from '../../assets/images/icons/heart.png';
+import PageHeader from '../../components/PageHeader';
 
 const Landing: React.FC = () => {
   const { navigate } = useNavigation();
@@ -31,30 +28,30 @@ const Landing: React.FC = () => {
   }
 
   return (
-    <Container>
-      <Banner source={landingImg} />
+    <>
+      <PageHeaderContainer>
+        <PageHeader />
+      </PageHeaderContainer>
+      <Container>
+        <Banner source={landingImg} />
 
-      <Title>Como você deseja cadastrar seu produto?</Title>
+        <Title>Como você deseja cadastrar seu produto?</Title>
 
-      <ButtonsContainer>
-        <ButtonPrimary onPress={navigateToScan}>
-          <FeatherIcon size={35} name="aperture" color="#fff" />
+        <ButtonsContainer>
+          <Button onPress={navigateToScan}>
+            <FeatherIcon size={35} name="aperture" color="#fff" />
 
-          <ButtonText>Scan</ButtonText>
-        </ButtonPrimary>
+            <ButtonText>Scan</ButtonText>
+          </Button>
 
-        <ButtonSecondary onPress={navigateToRegister}>
-          <FeatherIcon size={35} name="edit" color="#fff" />
+          <Button onPress={navigateToRegister}>
+            <FeatherIcon size={35} name="edit" color="#fff" />
 
-          <ButtonText>Manualmente</ButtonText>
-        </ButtonSecondary>
-      </ButtonsContainer>
-
-      <TotalConnections>
-        Total de
-        <Image source={heartIcon} />
-      </TotalConnections>
-    </Container>
+            <ButtonText>Manual</ButtonText>
+          </Button>
+        </ButtonsContainer>
+      </Container>
+    </>
   );
 };
 
