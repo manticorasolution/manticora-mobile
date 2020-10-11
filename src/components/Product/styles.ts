@@ -29,20 +29,20 @@ export const ProfileInfo = styled.View`
 `;
 
 export const Name = styled.Text`
-  font-family: Archivo_700Bold;
+  font-family: Archivo-Bold;
   color: #32264d;
   font-size: 17px;
 `;
 
 export const QuantityInfo = styled.Text`
-  font-family: Poppins_400Regular;
+  font-family: Poppins-Regular;
   color: #8b8989;
   font-size: 15px;
   margin-top: 4px;
 `;
 
 export const Quantity = styled.Text`
-  font-family: Poppins_400Regular;
+  font-family: Poppins-Regular;
   color: #2f4f4f;
   font-size: 18px;
   margin-top: 4px;
@@ -63,20 +63,20 @@ export const InfoContainer = styled.View`
 `;
 
 export const Info = styled.Text`
-  font-family: Poppins_400Regular;
+  font-family: Poppins-Regular;
   color: #8b8989;
   font-size: 14px;
 `;
 
 export const Code = styled.Text`
-  font-family: Poppins_400Regular;
+  font-family: Poppins-Regular;
   color: #778899;
   font-size: 14px;
   text-decoration: underline;
 `;
 
 export const Price = styled.Text`
-  font-family: Poppins_400Regular;
+  font-family: Poppins-Regular;
   color: #32cd32;
   font-size: 16px;
 `;
@@ -108,7 +108,7 @@ export const ContactButton = styled(RectButton)`
 
 export const ContactTextButton = styled.Text`
   color: #fff;
-  font-family: Archivo_700Bold;
+  font-family: Archivo-Bold;
   font-size: 16px;
   margin-left: 16px;
 `;

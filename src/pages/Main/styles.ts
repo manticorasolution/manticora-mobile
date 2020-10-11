@@ -13,7 +13,7 @@ export const Banner = styled.Image`
 `;
 
 export const Title = styled.Text`
-  font-family: Poppins_400Regular;
+  font-family: Poppins-Regular;
   color: #000;
   font-size: 20px;
   line-height: 30px;
@@ -45,13 +45,13 @@ export const ButtonSecondary = styled(RectButton)`
 `;
 
 export const ButtonText = styled.Text`
-  font-family: Archivo_700Bold;
+  font-family: Archivo-Bold;
   color: #fff;
   font-size: 18px;
 `;
 
 export const TotalConnections = styled.Text`
-  font-family: Poppins_400Regular;
+  font-family: Poppins-Regular;
   color: #d4c2ff;
   font-size: 12px;
   line-height: 20px;
