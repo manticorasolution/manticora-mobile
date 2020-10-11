@@ -1,13 +1,9 @@
 import React from 'react';
 
-import { View, Text } from 'react-native';
+import PageHeader from '../../components/PageHeader';
 
 const Register: React.FC = () => {
-  return (
-    <View>
-      <Text>Register</Text>
-    </View>
-  );
+  return <PageHeader navBack />;
 };
 
 export default Register;
