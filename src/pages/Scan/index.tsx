@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { RNCamera } from 'react-native-camera';
 
+import { Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import {
   CameraContainer,
   Container,
@@ -33,6 +35,7 @@ interface IProductResponse {
 const Register: React.FC = () => {
   const [product, setProduct] = useState(null as IProduct | null);
   const [disableCamera, setDisableCamere] = useState(false);
+  const { navigate } = useNavigation();
 
   async function handleBarCode(barcode: string): Promise<void> {
     if (disableCamera) return;
@@ -55,7 +58,25 @@ const Register: React.FC = () => {
   }
 
   function handleRegister(): void {
-    setDisableCamere(false);
+    Alert.alert(
+      'Produto Cadastrado com sucesso!',
+      'O que você deseja fazer?',
+      [
+        {
+          text: 'Voltar a tela inicial',
+          onPress: () => navigate('Main'),
+        },
+        {
+          text: 'Cadastrar mais produtos',
+          onPress: () => {
+            setDisableCamere(false);
+            setProduct(null);
+          },
+        },
+      ],
+      { cancelable: false },
+    );
+    // setDisableCamere(false);
   }
 
   return (
